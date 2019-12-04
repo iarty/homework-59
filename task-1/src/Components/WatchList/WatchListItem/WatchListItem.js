@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Input from '../../UI/Input/Input'
 import CloseBtn from '../../UI/Close/Close'
 import classes from './WatchListItem.module.css'
 
-
-
-export default function WatchListItem({ onChange, value, removeFilm, index }) {
-  return (
-    <div className={classes.WatchListItem}>
-      <Input value={value} onChange={onChange} />
-      <CloseBtn onClick={removeFilm} index={index} />
-    </div>
-  )
+export default class WatchListItem extends Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.value !== this.props.value
+  }
+  render() {
+    const { onChange, value, removeFilm, index } = { ...this.props }
+    console.log('Я ренденрюсь WatchListItem')
+    return (
+      <div className={classes.WatchListItem}>
+        <Input value={value} onChange={onChange} />
+        <CloseBtn onClick={removeFilm} index={index} />
+      </div>
+    )
+  }
 }
