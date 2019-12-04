@@ -8,6 +8,13 @@ export default class FilmWatchList extends Component {
     filmList: []
   }
 
+  constructor() {
+    super()
+    if (localStorage.getItem('filmList')) {
+      this.state = JSON.parse(localStorage.getItem('filmList'))
+    }
+  }
+
   addFilm = () => {
     this.setState(prevState => {
       return (
@@ -31,6 +38,7 @@ export default class FilmWatchList extends Component {
   }
 
   render() {
+    localStorage.setItem('filmList', JSON.stringify(this.state))
     return (
       <Fragment>
         <InputGroup addFilm={this.addFilm} inputHandler={this.inputHandler} inputValue={this.state.inputValue} />
