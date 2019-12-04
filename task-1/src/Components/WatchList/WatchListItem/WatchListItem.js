@@ -5,11 +5,11 @@ import classes from './WatchListItem.module.css'
 
 
 
-export default function WatchListItem() {
+export default function WatchListItem({ onChange, value, removeFilm, index }) {
   return (
-    <div className={classes.WatchListItem}> 
-      <Input />
-      <CloseBtn />
+    <div className={classes.WatchListItem}>
+      <Input value={value} onChange={onChange} />
+      <CloseBtn onClick={removeFilm} index={index} />
     </div>
   )
 }
