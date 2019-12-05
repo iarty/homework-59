@@ -37,8 +37,11 @@ export default class FilmWatchList extends Component {
     this.setState(prevState => prevState.filmList.splice(index, 1))
   }
 
-  render() {
+  componentDidUpdate() {
     localStorage.setItem('filmList', JSON.stringify(this.state))
+  }
+
+  render() {
     return (
       <Fragment>
         <InputGroup addFilm={this.addFilm} inputHandler={this.inputHandler} inputValue={this.state.inputValue} />

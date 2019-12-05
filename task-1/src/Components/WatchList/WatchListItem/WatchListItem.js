@@ -9,7 +9,6 @@ export default class WatchListItem extends Component {
   }
   render() {
     const { onChange, value, removeFilm, index } = { ...this.props }
-    console.log('Я ренденрюсь WatchListItem')
     return (
       <div className={classes.WatchListItem}>
         <Input value={value} onChange={onChange} />
