@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-
+import React, { Component, Fragment } from 'react';
+import ChuckNorrisJokes from './Containers/ChuckNorrisJokes/ChuckNorrisJokes';
 export default class App extends Component {
   render() {
     return (
-      <div>
-
-      </div>
+      <Fragment>
+        <ChuckNorrisJokes />
+      </Fragment>
     )
   }
 }
