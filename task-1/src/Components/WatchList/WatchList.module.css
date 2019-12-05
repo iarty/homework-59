@@ -4,5 +4,6 @@
   margin-top: 20px;
   height: 900px;
   text-align: center;
-  background: white
+  background: white;
+  overflow: scroll;
 }
