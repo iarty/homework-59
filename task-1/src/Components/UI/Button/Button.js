@@ -3,7 +3,7 @@ import classes from './Button.module.css'
 
 export default function Button(props) {
   return (
-    <button className={classes.InputGroupBtn} onClick={props.onClick}>
+    <button type='submit' className={classes.InputGroupBtn}>
       {props.children}
     </button>
   )

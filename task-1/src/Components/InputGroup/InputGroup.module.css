@@ -1,9 +1,12 @@
 .InputGroupWrap {
-  display: flex;
-  justify-content: space-around;
   border: 2px solid #ccc;
   border-radius: 3px;
   padding: 20px 30px;
-  align-items: flex-start;
   background: white;
+}
+
+.Form {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
 }

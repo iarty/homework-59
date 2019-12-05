@@ -15,7 +15,8 @@ export default class FilmWatchList extends Component {
     }
   }
 
-  addFilm = () => {
+  addFilm = (e) => {
+    e.preventDefault()
     this.setState(prevState => {
       return (
         { filmList: [...prevState.filmList, prevState.inputValue], inputValue: '' }
