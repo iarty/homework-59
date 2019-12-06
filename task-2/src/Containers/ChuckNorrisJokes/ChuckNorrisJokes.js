@@ -16,18 +16,16 @@ export default class ChuckNorrisJokes extends Component {
   dataHandler = async () => {
     this.setState({ showPreloader: true })
     const promises = [];
+
     for (let index = 0; index < 5; index++) {
-      const response = await fetch('https://api.chucknorris.io/jokes/random');
-      if (response.ok) {
-        const json = await response.json();
-        promises.push(json)
-      } else {
-        alert("Ошибка HTTP: " + response.status)
-      }
+      promises.push(fetch('https://api.chucknorris.io/jokes/random'))
     }
-    const jokes = await Promise.all(promises)
-    this.setState({ jokes, showPreloader: false })
+
+    const responses = await Promise.all(promises);
+    const jokes = await Promise.all(responses.map(response => response.json()));
+    this.setState({ jokes, showPreloader: false });
   }
+
 
   clickHandler = () => {
     this.dataHandler()
